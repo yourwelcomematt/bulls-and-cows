@@ -2,8 +2,10 @@
 
 var consoleReader = new ConsoleReader();
 var consoleWriter = new ConsoleWriter();
-var inputValidator = new InputValidator();
-var computerCode = "1234";
+var codeLength = 4;
+var inputValidator = new InputValidator(codeLength);
+var codeGenerator = new CodeGenerator(codeLength);
+var computerCode = codeGenerator.GenerateCode();
 var guessEvaluator = new GuessEvaluator(computerCode);
 
 var bullsAndCows = new BullsAndCows(consoleReader, consoleWriter, inputValidator, guessEvaluator);

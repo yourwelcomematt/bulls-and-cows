@@ -2,11 +2,16 @@ namespace bulls_and_cows_code;
 
 public class InputValidator
 {
-    private int _maxNumberOfDigits = 4;
-    
+    private readonly int _codeLength;
+
+    public InputValidator(int codeLength)
+    {
+        _codeLength = codeLength;
+    }
+
     public bool IsValidInput(string input)
     {
-        if (!(int.TryParse(input, out _) && input.Length == _maxNumberOfDigits))
+        if (!(int.TryParse(input, out _) && input.Length == _codeLength))
         {
             return false;
         }

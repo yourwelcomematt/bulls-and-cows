@@ -12,7 +12,7 @@ public class BullsAndCowsTests
         var mockReader = Substitute.For<IReader>();
         mockReader.Read().Returns("1234");
 
-        var inputValidator = new InputValidator();
+        var inputValidator = new InputValidator(4);
         var guessEvaluator = new GuessEvaluator("1234");
 
         var bullsAndCows = new BullsAndCows(mockReader, mockWriter, inputValidator, guessEvaluator);
@@ -29,7 +29,7 @@ public class BullsAndCowsTests
         var mockReader = Substitute.For<IReader>();
         mockReader.Read().Returns("0234");
 
-        var inputValidator = new InputValidator();
+        var inputValidator = new InputValidator(4);
         var guessEvaluator = new GuessEvaluator("1234");
 
         var bullsAndCows = new BullsAndCows(mockReader, mockWriter, inputValidator, guessEvaluator);

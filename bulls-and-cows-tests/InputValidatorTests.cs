@@ -4,7 +4,7 @@ namespace bulls_and_cows_tests;
 
 public class InputValidatorTests
 {
-    private readonly InputValidator _inputValidator = new();
+    private readonly InputValidator _inputValidator = new(4);
     
     [Theory]
     [InlineData("0123")]
