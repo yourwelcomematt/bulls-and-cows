@@ -33,12 +33,12 @@ public class CodeGeneratorTests
         var codeGenerator = new CodeGenerator(codeLength);
 
         var code = codeGenerator.GenerateCode();
-        var areDuplicates = AreDuplicateDigits(code);
+        var containsDuplicateDigits = ContainsDuplicateDigits(code);
         
-        Assert.False(areDuplicates);
+        Assert.False(containsDuplicateDigits);
     }
 
-    private bool AreDuplicateDigits(string code)
+    private bool ContainsDuplicateDigits(string code)
     {
         var usedDigits = new Dictionary<char, int>();
 
