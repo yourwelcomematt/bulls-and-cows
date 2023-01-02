@@ -25,14 +25,8 @@ public class BullsAndCows
         while (true)
         {
             PrintNumberOfGuessesRemaining(numberOfGuesses);
-            
-            var guess = _reader.Read();
 
-            while (!_inputValidator.IsValidInput(guess))
-            {
-                _writer.Write("Invalid input. Please try again.");
-                guess = _reader.Read();
-            }
+            var guess = GetUserGuess();
 
             if (_guessEvaluator.IsCorrectGuess(guess))
             {
@@ -65,6 +59,19 @@ public class BullsAndCows
 
         _writer.Write("---");
         _writer.Write($"{numberOfGuessesRemaining} {guessForm} remaining: ");
+    }
+
+    private string GetUserGuess()
+    {
+        var guess = _reader.Read();
+
+        while (!_inputValidator.IsValidInput(guess))
+        {
+            _writer.Write("Invalid input. Please try again.");
+            guess = _reader.Read();
+        }
+
+        return guess;
     }
 
     private void PrintTiedGameMessage()
