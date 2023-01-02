@@ -2,7 +2,7 @@ namespace bulls_and_cows_code;
 
 public class CodeGenerator
 {
-    private int _codeLength;
+    private readonly int _codeLength;
 
     public CodeGenerator(int codeLength)
     {
