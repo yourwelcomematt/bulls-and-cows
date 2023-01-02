@@ -53,6 +53,9 @@ public class BullsAndCows
                 break;
             }
         }
+        
+        _writer.Write("---");
+        _writer.Write("Thanks for playing!");
     }
 
     private void PrintNumberOfGuessesRemaining(int numberOfGuesses)
