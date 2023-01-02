@@ -2,16 +2,16 @@ namespace bulls_and_cows_code;
 
 public class GuessEvaluator
 {
-    private readonly string _computerCode;
+    public string ComputerCode { get; }
 
     public GuessEvaluator(string computerCode)
     {
-        _computerCode = computerCode;
+        ComputerCode = computerCode;
     }
 
     public bool IsCorrectGuess(string guess)
     {
-        return _computerCode == guess;
+        return ComputerCode == guess;
     }
 
     public int GetNumberOfBulls(string guess)
@@ -20,7 +20,7 @@ public class GuessEvaluator
 
         for (int i = 0; i < guess.Length; i++)
         {
-            if (guess[i] == _computerCode[i])
+            if (guess[i] == ComputerCode[i])
             {
                 numberOfBulls++;
             }
@@ -35,7 +35,7 @@ public class GuessEvaluator
         
         for (int i = 0; i < guess.Length; i++)
         {
-            var indexOfGuessDigitInComputerCode = _computerCode.IndexOf(guess[i]);
+            var indexOfGuessDigitInComputerCode = ComputerCode.IndexOf(guess[i]);
             
             if (indexOfGuessDigitInComputerCode != i && indexOfGuessDigitInComputerCode != -1)
             {

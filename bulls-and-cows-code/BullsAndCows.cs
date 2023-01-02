@@ -50,7 +50,9 @@ public class BullsAndCows
 
             if (numberOfGuesses == MaxNumberOfGuesses)
             {
+                _writer.Write("---");
                 _writer.Write("No guesses remaining, it's a tie!");
+                _writer.Write($"The code was {_guessEvaluator.ComputerCode}");
                 break;
             }
         }
