@@ -24,8 +24,7 @@ public class BullsAndCows
 
         while (true)
         {
-            _writer.Write("---");
-            _writer.Write("You guess: ");
+            PrintNumberOfGuessesRemaining(numberOfGuesses);
             
             var guess = _reader.Read();
 
@@ -56,5 +55,14 @@ public class BullsAndCows
                 break;
             }
         }
+    }
+
+    private void PrintNumberOfGuessesRemaining(int numberOfGuesses)
+    {
+        var numberOfGuessesRemaining = MaxNumberOfGuesses - numberOfGuesses;
+        var guessForm = numberOfGuessesRemaining == 1 ? "guess" : "guesses";
+
+        _writer.Write("---");
+        _writer.Write($"{numberOfGuessesRemaining} {guessForm} remaining: ");
     }
 }
