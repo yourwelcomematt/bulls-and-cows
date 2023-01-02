@@ -19,7 +19,7 @@ public class BullsAndCowsTests
         
         bullsAndCows.Run();
         
-        mockWriter.Received(1).Write("You win!");
+        mockWriter.Received(1).WriteLine("You win!");
     }
     
     [Fact]
@@ -36,6 +36,6 @@ public class BullsAndCowsTests
         
         bullsAndCows.Run();
         
-        mockWriter.Received(1).Write("No guesses remaining, it's a tie!");
+        mockWriter.Received(1).WriteLine("No guesses remaining, it's a tie!");
     }
 }

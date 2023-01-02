@@ -18,7 +18,7 @@ public class BullsAndCows
 
     public void Run()
     {
-        _writer.Write("Welcome to Bulls and Cows!");
+        _writer.WriteLine("Welcome to Bulls and Cows!");
         
         var numberOfGuesses = 0;
 
@@ -30,14 +30,14 @@ public class BullsAndCows
 
             if (_guessEvaluator.IsCorrectGuess(guess))
             {
-                _writer.Write("You win!");
+                _writer.WriteLine("You win!");
                 break;
             }
 
             var numberOfBulls = _guessEvaluator.GetNumberOfBulls(guess);
             var numberOfCows = _guessEvaluator.GetNumberOfCows(guess);
             
-            _writer.Write($"Result: {numberOfBulls} bull(s) and {numberOfCows} cow(s)");
+            _writer.WriteLine($"Result: {numberOfBulls} bull(s) and {numberOfCows} cow(s)");
 
             numberOfGuesses++;
 
@@ -48,8 +48,8 @@ public class BullsAndCows
             }
         }
         
-        _writer.Write("---");
-        _writer.Write("Thanks for playing!");
+        _writer.WriteLine("---");
+        _writer.WriteLine("Thanks for playing!");
     }
 
     private void PrintNumberOfGuessesRemaining(int numberOfGuesses)
@@ -57,8 +57,8 @@ public class BullsAndCows
         var numberOfGuessesRemaining = MaxNumberOfGuesses - numberOfGuesses;
         var guessForm = numberOfGuessesRemaining == 1 ? "guess" : "guesses";
 
-        _writer.Write("---");
-        _writer.Write($"{numberOfGuessesRemaining} {guessForm} remaining: ");
+        _writer.WriteLine("---");
+        _writer.WriteLine($"{numberOfGuessesRemaining} {guessForm} remaining: ");
     }
 
     private string GetUserGuess()
@@ -67,7 +67,7 @@ public class BullsAndCows
 
         while (!_inputValidator.IsValidInput(guess))
         {
-            _writer.Write("Invalid input. Please try again.");
+            _writer.WriteLine("Invalid input. Please try again.");
             guess = _reader.Read();
         }
 
@@ -76,8 +76,8 @@ public class BullsAndCows
 
     private void PrintTiedGameMessage()
     {
-        _writer.Write("---");
-        _writer.Write("No guesses remaining, it's a tie!");
-        _writer.Write($"The code was {_guessEvaluator.ComputerCode}");
+        _writer.WriteLine("---");
+        _writer.WriteLine("No guesses remaining, it's a tie!");
+        _writer.WriteLine($"The code was {_guessEvaluator.ComputerCode}");
     }
 }
