@@ -49,9 +49,7 @@ public class BullsAndCows
 
             if (numberOfGuesses == MaxNumberOfGuesses)
             {
-                _writer.Write("---");
-                _writer.Write("No guesses remaining, it's a tie!");
-                _writer.Write($"The code was {_guessEvaluator.ComputerCode}");
+                PrintTiedGameMessage();
                 break;
             }
         }
@@ -64,5 +62,12 @@ public class BullsAndCows
 
         _writer.Write("---");
         _writer.Write($"{numberOfGuessesRemaining} {guessForm} remaining: ");
+    }
+
+    private void PrintTiedGameMessage()
+    {
+        _writer.Write("---");
+        _writer.Write("No guesses remaining, it's a tie!");
+        _writer.Write($"The code was {_guessEvaluator.ComputerCode}");
     }
 }
