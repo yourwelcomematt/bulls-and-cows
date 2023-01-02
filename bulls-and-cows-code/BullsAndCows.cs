@@ -6,6 +6,7 @@ public class BullsAndCows
     private readonly IWriter _writer;
     private readonly InputValidator _inputValidator;
     private readonly GuessEvaluator _guessEvaluator;
+    
     private const int MaxNumberOfGuesses = 7;
 
     public BullsAndCows(IReader reader, IWriter writer, InputValidator inputValidator, GuessEvaluator guessEvaluator)
@@ -58,7 +59,7 @@ public class BullsAndCows
         var guessForm = numberOfGuessesRemaining == 1 ? "guess" : "guesses";
 
         _writer.WriteLine("---");
-        _writer.WriteLine($"{numberOfGuessesRemaining} {guessForm} remaining: ");
+        _writer.Write($"{numberOfGuessesRemaining} {guessForm} remaining: ");
     }
 
     private string GetUserGuess()
@@ -67,7 +68,7 @@ public class BullsAndCows
 
         while (!_inputValidator.IsValidInput(guess))
         {
-            _writer.WriteLine("Invalid input. Please try again.");
+            _writer.Write("Invalid input. Please try again: ");
             guess = _reader.Read();
         }
 
