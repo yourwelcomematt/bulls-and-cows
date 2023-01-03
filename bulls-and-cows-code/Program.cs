@@ -2,9 +2,12 @@
 
 var consoleReader = new ConsoleReader();
 var consoleWriter = new ConsoleWriter();
-var codeLength = 4;
+
+const int codeLength = 4;
+
 var inputValidator = new InputValidator(codeLength);
 var codeGenerator = new CodeGenerator(codeLength);
+
 var computerCode = codeGenerator.GenerateCode();
 var guessEvaluator = new GuessEvaluator(computerCode);
 
